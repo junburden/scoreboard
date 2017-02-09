@@ -1,0 +1,19 @@
+body{
+  text-align: center;
+}
+
+#time{
+  font-size: 7em;
+}
+
+.score_number{
+  font-size: 25em;
+}
+
+.red{
+  color: red;
+}
+
+.blue{
+  color: blue;
+}
