@@ -1,19 +1,91 @@
+/* Font by Tepid Monkey Fonts, http://www.1001fonts.com/users/tepidmonkey/ */
+@font-face {
+  font-family: Dited;
+  src: url(fonts/repet___.ttf);
+}
+
+@media (min-width:320px) {
+  .col-3{
+    margin: 1px;
+  }
+  #time{
+    font-size: 1em;
+  }
+  .score_number{
+    font-size: 5em;
+  }
+  .team_name{
+    font-size: 1em;
+  }
+}
+
+@media (min-width:641px) {
+  .col-3{
+    margin: 10px;
+  }
+  #time{
+    font-size: 4em;
+  }
+  .score_number{
+    font-size: 10em;
+  }
+  .team_name{
+    font-size: 3em;
+  }
+}
+
+@media (min-width:1025px) {
+  #time{
+    font-size: 6em;
+  }
+  .score_number{
+    font-size: 17em;
+  }
+}
+
+@media (min-width:1281px) {
+  #time{
+    font-size: 6em;
+  }
+  .score_number{
+    font-size: 21em;
+  }
+}
+
 body{
+  color: #eee;
+  background-color: #222;
   text-align: center;
 }
 
+.row{
+
+}
+
+.col-3{
+  width: 30%;
+  float: left;
+}
+
 #time{
-  font-size: 7em;
+  color: #fb0;
+  font-family: Dited;
+  border: 5px solid #eee;
+  background-color: #050505;
 }
 
 .score_number{
-  font-size: 25em;
+  color: #eee;
+  line-height: 1;
+  font-family: Dited;
+  border: 5px solid;
+  background-color: #050505;
 }
 
-.red{
-  color: red;
+.home{
+  border-color: red;
 }
 
-.blue{
-  color: blue;
+.visitor{
+  border-color: blue;
 }

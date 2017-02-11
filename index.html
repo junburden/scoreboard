@@ -3,50 +3,33 @@
   <head>
     <title>Scoreboard</title>
     <link rel="stylesheet" type="text/css" href="css/scoreboard.css">
-
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   </head>
   <body>
     <div class="row">
-      <div class="col-xs-4">
-        <div class="panel panel-default">
-          <div class="panel-body">
-            <h1 id="red_team_name">Red Team</h1>
-            <div id="red_score" class="score_number red">0</div>
-            <br />
-            <button id="red_plus" type="button" class="btn btn-default">+</button>
-            <button id="red_minus" type="button" class="btn btn-default">-</button>
-          </div>
-        </div>
+      <div class="col-3">
+        <div id="home_team_name" class="team_name">HOME</div>
+        <div id="home_score" class="score_number home">0</div>
       </div>
-      <div class="col-xs-4">
-        <div class="panel panel-default">
-          <div class="panel-body">
-            <div id="time">30:00</div>
-            <br />
-            <button id="start" type="button" class="btn btn-default">start</button>
-            <button id="stop" type="button" class="btn btn-default">stop</button>
-            <button id="reset" type="button" class="btn btn-default">reset</button>
-          </div>
-        </div>
+      <div class="col-3">
+        <div id="time">30:00</div>
       </div>
-      <div class="col-xs-4">
-        <div class="panel panel-default">
-          <div class="panel-body">
-            <h1 id="blue_team_name">Blue Team</h1>
-            <div id="blue_score" class="score_number blue">0</div>
-            <br />
-            <button id="blue_plus" type="button" class="btn btn-default">+</button>
-            <button id="blue_minus" type="button" class="btn btn-default">-</button>
-          </div>
-        </div>
+      <div class="col-3">
+        <div id="visitor_team_name" class="team_name">VISITOR</div>
+        <div id="visitor_score" class="score_number visitor">0</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-3">
+        <button id="home_plus" type="button" class="btn btn-default">+</button>
+        <button id="home_minus" type="button" class="btn btn-default">-</button>
+      </div>
+      <div class="col-3">
+        <button id="start_stop" type="button" class="btn btn-default">Start/Stop</button>
+        <button id="set" type="button" class="btn btn-default">Set</button>
+      </div>
+      <div class="col-3">
+        <button id="visitor_plus" type="button" class="btn btn-default">+</button>
+        <button id="visitor_minus" type="button" class="btn btn-default">-</button>
       </div>
     </div>
     <script src="js/scoreboard.js"></script>

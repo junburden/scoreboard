@@ -1,17 +1,16 @@
 var time = document.getElementById('time'),
-    start = document.getElementById('start'),
-    stop = document.getElementById('stop'),
-    reset = document.getElementById('reset'),
-    red_score = document.getElementById('red_score'),
-    red_plus = document.getElementById('red_plus'),
-    red_minus = document.getElementById('red_minus'),
-    red_team_name = document.getElementById('red_team_name'),
-    blue_score = document.getElementById('blue_score'),
-    blue_plus = document.getElementById('blue_plus'),
-    blue_minus = document.getElementById('blue_minus'),
-    blue_team_name = document.getElementById('blue_team_name'),
-    seconds = 0, minutes = 30, red = 0, blue = 0,
-    t;
+    start = document.getElementById('start_stop'),
+    set = document.getElementById('set'),
+    home_score = document.getElementById('home_score'),
+    home_plus = document.getElementById('home_plus'),
+    home_minus = document.getElementById('home_minus'),
+    home_team_name = document.getElementById('home_team_name'),
+    visitor_score = document.getElementById('visitor_score'),
+    visitor_plus = document.getElementById('visitor_plus'),
+    visitor_minus = document.getElementById('visitor_minus'),
+    visitor_team_name = document.getElementById('visitor_team_name'),
+    seconds = 0, minutes = 30, home = 0, visitor = 0,
+    t, running = false;
 
 function add() {
     seconds--;
@@ -30,79 +29,83 @@ function add() {
 
     timer();
 }
+
 function timer() {
     t = setTimeout(add, 1000);
 }
 
-
-/* Start button */
-start.onclick = timer;
-
-/* Stop button */
-stop.onclick = function() {
-    clearTimeout(t);
-}
-
-/* Clear button */
-reset.onclick = function() {
-    clearTimeout(t);
-    time.textContent = "30:00";
-    seconds = 0; minutes = 30;
-}
-
-function add_to_red() {
-    red++;
-    red_score.textContent = red;
-}
-
-function remove_from_red() {
-    red--;
-    red_score.textContent = red;
-}
-
-function add_to_blue() {
-    blue++;
-    blue_score.textContent = blue;
-}
-
-function remove_from_blue() {
-    blue--;
-    blue_score.textContent = blue;
-}
-
-/* score buttons */
-red_plus.onclick = add_to_red;
-red_score.onclick = add_to_red;
-
-red_minus.onclick = remove_from_red;
-
-blue_plus.onclick = add_to_blue;
-blue_score.onclick = add_to_blue;
-
-blue_minus.onclick = remove_from_blue;
-
-/* Set values */
-blue_team_name.onclick = function() {
-    name = prompt("Rename the blue team", blue_team_name.textContent);
-    if (name != "") {
-        blue_team_name.textContent = name;
+function toggle_timer() {
+    if (running) {
+        clearTimeout(t);
+        running = false;
+    } else {
+        timer();
+        running = true;
     }
 }
 
-red_team_name.onclick = function() {
-    name = prompt("Rename the red team", red_team_name.textContent);
-    if (name != "") {
-        red_team_name.textContent = name;
-    }
-}
+/* Clicking the timer */
+time.onclick = toggle_timer
 
-time.onclick = function() {
+/* Start/Stop button */
+start_stop.onclick = toggle_timer;
+
+/* Set button */
+set.onclick = function() {
     clearTimeout(t);
-    new_time = prompt("Set the new time e.g. 30:00", time.textContent);
+    new_time = prompt("Set the new time e.g. 30:00", "30:00");
     if (new_time != "" && new_time != null) {
         time.textContent = new_time;
         new_time = new_time.split(":");
         minutes = parseInt(new_time[0])
         seconds = parseInt(new_time[1])
+    }
+}
+
+function add_to_home() {
+    home++;
+    home_score.textContent = home;
+}
+
+function remove_from_home() {
+    home--;
+    home_score.textContent = home;
+}
+
+function add_to_visitor() {
+    visitor++;
+    visitor_score.textContent = visitor;
+}
+
+function remove_from_visitor() {
+    visitor--;
+    visitor_score.textContent = visitor;
+}
+
+/* score buttons */
+home_plus.onclick = add_to_home;
+home_score.onclick = add_to_home;
+
+home_minus.onclick = remove_from_home;
+
+visitor_plus.onclick = add_to_visitor;
+visitor_score.onclick = add_to_visitor;
+
+visitor_minus.onclick = remove_from_visitor;
+
+/* Set team names */
+visitor_team_name.onclick = function() {
+    var old_name = visitor_team_name.textContent;
+    name = prompt("Rename the " + old_name + " team", old_name);
+    if (name != "" && name != "null") {
+        visitor_team_name.textContent = name.toUpperCase();
+    }
+}
+
+home_team_name.onclick = function() {
+    var old_name = home_team_name.textContent;
+    name = prompt("Rename the " + old_name + " team", old_name);
+    if (name != "" && name != "null") {
+        home_team_name.textContent = name.toUpperCase();
     }
 }
