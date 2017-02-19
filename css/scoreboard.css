@@ -67,6 +67,7 @@ body{
   color: #fb0;
   font-family: Repetition_Scrolling;
   border: 5px solid #eee;
+  border-radius: 10px;
   background-color: #050505;
 }
 
@@ -75,6 +76,7 @@ body{
   line-height: 1;
   font-family: Repetition_Scrolling;
   border: 5px solid;
+  border-radius: 10px;
   background-color: #050505;
 }
 
